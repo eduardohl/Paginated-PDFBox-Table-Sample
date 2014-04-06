@@ -7,38 +7,39 @@ import org.apache.pdfbox.pdmodel.font.PDFont;
 
 public class Table {
 
-    //Table attributes
+    // Table attributes
     private float margin;
-	private float height;
-	private PDRectangle pageSize;
-	private boolean isLandscape;
-	private float rowHeight;
+    private float height;
+    private PDRectangle pageSize;
+    private boolean isLandscape;
+    private float rowHeight;
 
-	//font attributes
-	private PDFont textFont;
-	private float fontSize;
+    // font attributes
+    private PDFont textFont;
+    private float fontSize;
 
-	//Content attributes
-	private Integer numberOfRows;
-	private List<Column> columns;
-	private String[][] content;
-	private float cellMargin;
+    // Content attributes
+    private Integer numberOfRows;
+    private List<Column> columns;
+    private String[][] content;
+    private float cellMargin;
 
-	public Table(){}
-	
-	public Integer getNumberOfColumns() { 
-		return this.getColumns().size();
-	}
-	
-	public float getWidth(){
-		float tableWidth = 0f;
-		for (Column column : columns) {
-			tableWidth += column.getWidth();
-		}
-		return tableWidth;
-	}
-	
-	public float getMargin() {
+    public Table() {
+    }
+
+    public Integer getNumberOfColumns() {
+        return this.getColumns().size();
+    }
+
+    public float getWidth() {
+        float tableWidth = 0f;
+        for (Column column : columns) {
+            tableWidth += column.getWidth();
+        }
+        return tableWidth;
+    }
+
+    public float getMargin() {
         return margin;
     }
 
@@ -70,58 +71,61 @@ public class Table {
         this.fontSize = fontSize;
     }
 
-    public String [] getColumnsNamesAsArray() {
-		String [] columnNames = new String[getNumberOfColumns()];
-		for (int i = 0; i < getNumberOfColumns() - 1; i++){
-			columnNames[i] = columns.get(i).getName();
-		}
-		return columnNames;
-	}
-	
-	public List<Column> getColumns() {
-		return columns;
-	}
-	public void setColumns(List<Column> columns) {
-		this.columns = columns;
-	}
-	public Integer getNumberOfRows() {
-		return numberOfRows;
-	}
-	public void setNumberOfRows(Integer numberOfRows) {
-		this.numberOfRows = numberOfRows;
-	}
+    public String[] getColumnsNamesAsArray() {
+        String[] columnNames = new String[getNumberOfColumns()];
+        for (int i = 0; i < getNumberOfColumns() - 1; i++) {
+            columnNames[i] = columns.get(i).getName();
+        }
+        return columnNames;
+    }
 
-	public float getHeight() {
-		return height;
-	}
+    public List<Column> getColumns() {
+        return columns;
+    }
 
-	public void setHeight(float height) {
-		this.height = height;
-	}
+    public void setColumns(List<Column> columns) {
+        this.columns = columns;
+    }
 
-	public float getRowHeight() {
-		return rowHeight;
-	}
+    public Integer getNumberOfRows() {
+        return numberOfRows;
+    }
 
-	public void setRowHeight(float rowHeight) {
-		this.rowHeight = rowHeight;
-	}
+    public void setNumberOfRows(Integer numberOfRows) {
+        this.numberOfRows = numberOfRows;
+    }
 
-	public String[][] getContent() {
-		return content;
-	}
+    public float getHeight() {
+        return height;
+    }
 
-	public void setContent(String[][] content) {
-		this.content = content;
-	}
+    public void setHeight(float height) {
+        this.height = height;
+    }
 
-	public float getCellMargin() {
-		return cellMargin;
-	}
+    public float getRowHeight() {
+        return rowHeight;
+    }
 
-	public void setCellMargin(float cellMargin) {
-		this.cellMargin = cellMargin;
-	}
+    public void setRowHeight(float rowHeight) {
+        this.rowHeight = rowHeight;
+    }
+
+    public String[][] getContent() {
+        return content;
+    }
+
+    public void setContent(String[][] content) {
+        this.content = content;
+    }
+
+    public float getCellMargin() {
+        return cellMargin;
+    }
+
+    public void setCellMargin(float cellMargin) {
+        this.cellMargin = cellMargin;
+    }
 
     public boolean isLandscape() {
         return isLandscape;
