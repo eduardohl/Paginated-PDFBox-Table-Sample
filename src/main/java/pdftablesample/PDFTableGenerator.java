@@ -70,7 +70,7 @@ public class PDFTableGenerator {
 
     // Writes the content for one line
     private void writeContentLine(String[] lineContent, PDPageContentStream contentStream, float nextTextX, float nextTextY,
-            Table table) throws IOException {
+                                  Table table) throws IOException {
         for (int i = 0; i < table.getNumberOfColumns(); i++) {
             String text = lineContent[i];
             contentStream.beginText();
